@@ -2,16 +2,19 @@ import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { Nav, Carousel } from "react-bootstrap";
+import Japanese from "./components/JapaneseFood/Japanese";
+import Detail from "./components/JapaneseFood/JapaneseDetail";
 
 function App() {
   return (
+    
     <>
       <Nav fill variant="tabs" defaultActiveKey="/home">
         <Nav.Item>
           <Nav.Link href="/home">한식</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link eventKey="link-1">일식</Nav.Link>
+          <Nav.Link eventKey="link-1" href="/japanese">일식</Nav.Link>
         </Nav.Item>
         <Nav.Item>
           <Nav.Link eventKey="link-2">중식</Nav.Link>
@@ -21,7 +24,8 @@ function App() {
         </Nav.Item>
       </Nav>
 
-      <Carousel slide={false}>
+      <Routes>
+        <Route path="/" element = {      <Carousel slide={false}>
         <Carousel.Item interval={1500}>
           <img
             className="d-block w-100"
@@ -40,17 +44,19 @@ function App() {
             alt="Second slide"
           />
 
-          <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item interval={1500}>
-          <img
-            className="d-block w-100"
-            src="https://blog.kakaocdn.net/dn/cQadDg/btqIZmNixWI/kkef5cKMY4YiWIDBcsX7IK/img.png"
-            alt="Third slide"
-          />
+            <Carousel.Caption>
+                  <h3>Japanese Food</h3>
+                  <p>
+                    KOSA 근처 맛난 일식 집들 :3
+                  </p>
+                </Carousel.Caption>
+              </Carousel.Item>
+              <Carousel.Item interval={1500}>
+                <img
+                  className="d-block w-100"
+                  src="https://blog.kakaocdn.net/dn/cQadDg/btqIZmNixWI/kkef5cKMY4YiWIDBcsX7IK/img.png"
+                  alt="Third slide"
+                />
 
           <Carousel.Caption>
             <h3>Third slide label</h3>
@@ -74,6 +80,12 @@ function App() {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
+}/>
+
+        <Route path="/japanese" element={<Japanese />} />
+        <Route path="/detail/:id" element={<Detail/>}/>
+      </Routes>
+
     </>
   );
 }
