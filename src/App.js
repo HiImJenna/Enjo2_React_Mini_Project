@@ -4,6 +4,10 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { Nav, Carousel } from "react-bootstrap";
 import Japanese from "./components/JapaneseFood/Japanese";
 import Detail from "./components/JapaneseFood/JapaneseDetail";
+import WesternMain from "./components/WesternFood/WesternMain";
+import Bugger from "./components/WesternFood/Bugger";
+import France from "./components/WesternFood/France";
+
 
 function App() {
   return (
@@ -50,7 +54,11 @@ function App() {
                 />
 
                 <Carousel.Caption>
+
                   <h3>일식</h3>
+
+                  <h3>Second slide label</h3>
+
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   </p>
@@ -89,8 +97,14 @@ function App() {
             </Carousel>
           }
         />
+
         <Route path="/japanese" element={<Japanese />} />
         <Route path="/detail/:id" element={<Detail/>}/>
+
+        <Route exact path="/westernmain" element={<WesternMain />} />
+        <Route exact path="/bugger" element={<Bugger />} />
+        <Route exact path="/france" element={<France />} />
+
       </Routes>
     </>
   );
