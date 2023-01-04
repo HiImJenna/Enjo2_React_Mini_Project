@@ -85,13 +85,15 @@ function France(props) {
         <br />
         <h1 style={{ textAlign: "center" }}>MENU</h1>
         <br />
-        {france.map((item, i) => {
-          return (
-            <Fcard france={france[i]} i={i} key={i}>
-              <br />
-            </Fcard>
-          );
-        })}
+        <Row>
+          {france.map((item, i) => {
+            return (
+              <Fcard france={france[i]} i={i} key={i}>
+                <br />
+              </Fcard>
+            );
+          })}
+        </Row>
       </Container>
     </div>
   );
@@ -99,17 +101,27 @@ function France(props) {
 
 function Fcard(props) {
   return (
-    <Row>
-      <Col sm={6}>
-        <img src={props.france.image} width="100%" height="400px" />
-        <br />
-      </Col>
-      <Col sm={3}>
+    <Col sm={6} style={{ marginTop: "20px" }}>
+      <img src={props.france.image} width="100%" height="400px" />
+      <br />
+      <div style={{ textAlign: "right" }}>
         <b>{props.france.title}</b>
         <br />
         {props.france.price}원
-      </Col>
-    </Row>
+      </div>
+    </Col>
+
+    //   <Row>
+    //   <Col sm={6} style={{ marginTop: "20px" }}>
+    //     <img src={props.france.image} width="100%" height="400px" />
+    //     <br />
+    //   </Col>
+    //   <Col sm={3}>
+    //     <b>{props.france.title}</b>
+    //     <br />
+    //     {props.france.price}원
+    //   </Col>
+    // </Row>
   );
 }
 
