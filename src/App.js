@@ -35,7 +35,7 @@ function App() {
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link eventKey="4" href="/western">
+            <Nav.Link eventKey="4" href="/westernmain">
               양식
             </Nav.Link>
           </Nav.Item>
@@ -47,9 +47,9 @@ function App() {
         <Route path="/chinese/:id" element={<ChineseDetail />} />
         <Route path="/japanese" element={<Japanese />} />
         <Route path="/detail/:id" element={<Detail/>}/>
-        <Route exact path="/westernmain" element={<WesternMain />} />
-        <Route exact path="/bugger" element={<Bugger />} />
-        <Route exact path="/france" element={<France />} />
+        <Route path="/westernmain" element={<WesternMain />} />
+        <Route path="/bugger" element={<Bugger />} />
+        <Route path="/france" element={<France />} />
       </Routes>
     </>
   );
