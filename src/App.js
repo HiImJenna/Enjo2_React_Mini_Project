@@ -5,6 +5,11 @@ import { Nav, Carousel } from "react-bootstrap";
 import Chinese from "./components/ChineseFood/Chinese";
 import ChineseDetail from "./components/ChineseFood/ChineseDetail";
 import Slide from "./components/Slide/Slide";
+import Japanese from "./components/JapaneseFood/Japanese";
+import Detail from "./components/JapaneseFood/JapaneseDetail";
+import WesternMain from "./components/WesternFood/WesternMain";
+import Bugger from "./components/WesternFood/Bugger";
+import France from "./components/WesternFood/France";
 
 function App() {
   return (
@@ -36,11 +41,15 @@ function App() {
           </Nav.Item>
         </Nav>
       </div>
-
       <Routes>
         <Route path="/" element={<Slide />} />
         <Route path="/chinese" element={<Chinese />} />
         <Route path="/chinese/:id" element={<ChineseDetail />} />
+        <Route path="/japanese" element={<Japanese />} />
+        <Route path="/detail/:id" element={<Detail/>}/>
+        <Route exact path="/westernmain" element={<WesternMain />} />
+        <Route exact path="/bugger" element={<Bugger />} />
+        <Route exact path="/france" element={<France />} />
       </Routes>
     </>
   );
