@@ -1,1 +1,1 @@
-# ReackMiniProject_FoodRecommend
+# ReactMiniProject_FoodRecommend
