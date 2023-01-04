@@ -83,13 +83,15 @@ function Bugger() {
         <br />
         <h1 style={{ textAlign: "center" }}>MENU</h1>
         <br />
-        {bugger.map((item, i) => {
-          return (
-            <Bcard bugger={bugger[i]} i={i} key={i}>
-              <br />
-            </Bcard>
-          );
-        })}
+        <Row>
+          {bugger.map((item, i) => {
+            return (
+              <Bcard bugger={bugger[i]} i={i} key={i}>
+                <br />
+              </Bcard>
+            );
+          })}
+        </Row>
       </Container>
     </div>
   );
@@ -97,17 +99,15 @@ function Bugger() {
 
 function Bcard(props) {
   return (
-    <Row>
-      <Col sm={6}>
-        <img src={props.bugger.image} width="100%" height="400px" />
-        <br />
-      </Col>
-      <Col sm={3}>
+    <Col sm={6} style={{ marginTop: "20px" }}>
+      <img src={props.bugger.image} width="100%" height="400px" />
+      <br />
+      <div style={{ textAlign: "right" }}>
         <b>{props.bugger.title}</b>
         <br />
         {props.bugger.price}원
-      </Col>
-    </Row>
+      </div>
+    </Col>
   );
 }
 
